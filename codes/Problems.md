@@ -16,3 +16,20 @@ Self-Join Practice Problems
 
 **Task**: Find the month-over-month percentage change for monthly active users (MAU). 
 
+# Query
+```
+WITH MoM AS
+(
+    SELECT EXTRACT(month FROM starttime) AS mymonth,
+    COUNT(DISTINCT memid) AS usr
+    FROM cd.bookings
+    GROUP BY mymonth 
+)
+
+SELECT 
+a.mymonth AS old_month, a.usr AS old_usrc,
+b.mymonth AS new_month, b.usr AS new_usrc,
+ROUND((100*(b.usr - a.usr) / a.usr),2) as perc_change
+FROM MoM AS a 
+INNER JOIN MoM AS b on a.mymonth = b.mymonth - 1;
+```
