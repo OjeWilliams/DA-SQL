@@ -16,7 +16,7 @@ Self-Join Practice Problems
 
 **Task**: Find the month-over-month percentage change for monthly active users (MAU). 
 
-# Query
+### Query
 ```
 WITH MoM AS
 (
