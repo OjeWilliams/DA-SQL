@@ -1,7 +1,7 @@
 
 # Q1
 ## Solution 1
-
+-- Using a CTE, EXTRACT and Self-Joining
 WITH MoM AS
 (
     SELECT EXTRACT(month FROM starttime) AS mymonth,
@@ -18,7 +18,7 @@ FROM MoM AS a
 INNER JOIN MoM AS b on a.mymonth = b.mymonth - 1;
 
 ## Solution 2
-
+-- Using a CTE, DATE_TRUNC and Self-Joining
 WITH MoM AS
 (
     SELECT DATE_TRUNC('month', starttime) AS mymonth,
@@ -33,8 +33,11 @@ B.mymonth AS new_month, B.usr_count AS new_usrc,
 ROUND(100*(B.usr_count - A.usr_count) / A.usr_count,2) as perc_change
 FROM MoM AS A 
 INNER JOIN MoM AS B on A.mymonth = B.mymonth - INTERVAL '1 month' ;
+<<<<<<< HEAD
 
 ###########################################################################
 
 # Q2
 ## Solution 
+=======
+>>>>>>> a5b1940352747a73a19015b9f3d1730d130aaad5
