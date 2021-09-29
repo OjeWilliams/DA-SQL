@@ -33,3 +33,8 @@ B.mymonth AS new_month, B.usr_count AS new_usrc,
 ROUND(100*(B.usr_count - A.usr_count) / A.usr_count,2) as perc_change
 FROM MoM AS A 
 INNER JOIN MoM AS B on A.mymonth = B.mymonth - INTERVAL '1 month' ;
+
+###########################################################################
+
+# Q2
+## Solution 
