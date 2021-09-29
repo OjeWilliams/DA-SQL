@@ -18,7 +18,7 @@ FROM MoM AS a
 INNER JOIN MoM AS b on a.mymonth = b.mymonth - 1;
 
 ## Solution 2
-
+-- Using a CTE, DATE_TRUNC and Self-Joining
 WITH MoM AS
 (
     SELECT DATE_TRUNC('month', starttime) AS mymonth,
