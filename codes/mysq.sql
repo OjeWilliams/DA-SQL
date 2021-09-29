@@ -1,7 +1,7 @@
 
 # Q1
 ## Solution 1
-
+-- Using a CTE, EXTRACT and Self-Joining
 WITH MoM AS
 (
     SELECT EXTRACT(month FROM starttime) AS mymonth,
